@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    float playerMoveSpeed = 1f;
-    float dirY;
-    Rigidbody2D rb;
+    float playerMoveSpeed = 7f;
+    float dirX;
+    private Rigidbody2D rb;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -23,12 +23,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate() 
     {
-        rb.velocity = new Vector2 (dirY,0f);
-        transform.position = new Vector2 (Mathf.Clamp(transform.position.x, -7.5f, 7.5f), transform.position.y);
+        rb.velocity = new Vector2 (dirX,0f);
     }
 
     void TiltMovement()
-    {
-         dirY = Input.acceleration.y * playerMoveSpeed;
+    {   
+        dirX = Input.acceleration.x * playerMoveSpeed;
+        transform.position = new Vector2 (Mathf.Clamp(transform.position.x, -1.72f, 1.72f), transform.position.y);
     }
 }

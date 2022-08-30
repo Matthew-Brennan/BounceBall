@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boundary : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) 
-    {      
+    {   Debug.Log("side hit");
         other.GetComponent<BallHandler>().SpawnBall();
     }
 }

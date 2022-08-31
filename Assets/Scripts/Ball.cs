@@ -9,6 +9,12 @@ public class Ball : MonoBehaviour
         
         GameObject objectHit = collision.collider.gameObject;
 
+        if(collision.collider.tag == "Ball" )
+        {
+            Debug.Log("Ball Hit");
+            Physics2D.IgnoreCollision(objectHit.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+
         if(collision.collider.tag == "Player")
         {
             objectHit.GetComponent<PlayerHit>().IncrementScore();
@@ -16,14 +22,12 @@ public class Ball : MonoBehaviour
 
         if(collision.collider.tag == "Wall")
         {
-            Debug.Log(objectHit);
-           //objectHit.GetComponent<PlayerHit>().IncrementScore();
+           objectHit.GetComponent<Boundary>().SpawnBall();
         }
 
         if(collision.collider.tag == "Floor")
         {
-            Debug.Log("floor Hit");
-            //GameOver
+            objectHit.GetComponent<BottomBoundary>().GameOver();
         }
     }
 }

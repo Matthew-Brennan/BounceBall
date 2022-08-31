@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ScoreSystem : MonoBehaviour
+public class PlayerHit : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
 
@@ -12,7 +12,8 @@ public class ScoreSystem : MonoBehaviour
     public void IncrementScore() 
     {   
         score++;
-        Debug.Log("Score: " + score.ToString());
         scoreText.text = score.ToString();  
     }
+        
+    
 }

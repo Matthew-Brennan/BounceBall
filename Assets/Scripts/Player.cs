@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     float playerMoveSpeed = 7f;
     float dirX;
-    float score = 0f;
     private Rigidbody2D rb;
 
 
@@ -33,9 +32,5 @@ public class Player : MonoBehaviour
         transform.position = new Vector2 (Mathf.Clamp(transform.position.x, -1.72f, 1.72f), transform.position.y);
     }
 
-    private void OnTriggerEnter(Collider other) 
-    {   
-        Debug.Log("bottom hit");
-        other.GetComponent<BallHandler>().SpawnBall();
-    }
+    
 }

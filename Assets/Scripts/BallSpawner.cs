@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallHandler : MonoBehaviour
+public class BallSpawner : MonoBehaviour
 {
     [SerializeField] GameObject ballPrefab;
     [SerializeField]private Rigidbody2D spawnPoint;
@@ -22,5 +22,4 @@ public class BallHandler : MonoBehaviour
         GameObject ballInstance = Instantiate(ballPrefab, spawnPoint.position, Quaternion.identity);
     }
 
-    
 }

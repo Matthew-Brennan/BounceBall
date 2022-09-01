@@ -12,7 +12,7 @@ public class Ball : MonoBehaviour
         if(collision.collider.tag == "Ball" )
         {
             Debug.Log("Ball Hit");
-            Physics2D.IgnoreCollision(objectHit.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
         }
 
         if(collision.collider.tag == "Player")

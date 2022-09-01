@@ -9,12 +9,6 @@ public class Ball : MonoBehaviour
         
         GameObject objectHit = collision.collider.gameObject;
 
-        if(collision.collider.tag == "Ball" )
-        {
-            Debug.Log("Ball Hit");
-            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
-        }
-
         if(collision.collider.tag == "Player")
         {
             objectHit.GetComponent<PlayerHit>().IncrementScore();

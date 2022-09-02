@@ -16,7 +16,7 @@ public class Ball : MonoBehaviour
 
         if(collision.collider.tag == "Wall")
         {
-           objectHit.GetComponent<Boundary>().SpawnBall();
+           objectHit.GetComponent<Boundary>().SpawnBall(this.gameObject, objectHit);
         }
 
         if(collision.collider.tag == "Floor")
